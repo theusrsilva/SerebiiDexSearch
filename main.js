@@ -1,4 +1,4 @@
-function autocomplete(inp, arr) {
+function autocomplete(inp, arr, sub) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
@@ -92,6 +92,11 @@ function autocomplete(inp, arr) {
     /*execute a function when someone clicks in the document:*/
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
+    });
+
+    sub.addEventListener("click", function (e){
+      var value = inp.value;
+      sub.href = sub.href+ value.toLowerCase();
     });
   }
   
@@ -907,6 +912,7 @@ function autocomplete(inp, arr) {
     "Meltan",
     "Melmetal"
   ];
+
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-  autocomplete(document.getElementById("myInput"), pokemons);
+  autocomplete(document.getElementById("myInput"), pokemons,document.getElementById("submit") );
