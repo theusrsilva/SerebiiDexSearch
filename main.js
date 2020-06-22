@@ -30,6 +30,8 @@ function autocomplete(inp, arr, sub, img) {
             b.addEventListener("click", function(e) {
                 /*insert the value for the autocomplete text field:*/
                 inp.value = this.getElementsByTagName("input")[0].value;
+                var dexNum = arr.indexOf(this.getElementsByTagName("input")[0].value)+1;
+                img.src = "https://www.serebii.net/pokedex-swsh/icon/"+dexNum+".png"
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
