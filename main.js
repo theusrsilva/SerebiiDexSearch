@@ -1,4 +1,4 @@
-function autocomplete(inp, arr, sub) {
+function autocomplete(inp, arr, sub, img) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
@@ -915,4 +915,4 @@ function autocomplete(inp, arr, sub) {
 
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-  autocomplete(document.getElementById("myInput"), pokemons,document.getElementById("submit") );
+  autocomplete(document.getElementById("myInput"), pokemons,document.getElementById("submit"), document.getElementById("image") );
