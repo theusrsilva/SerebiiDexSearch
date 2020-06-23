@@ -6,7 +6,8 @@
     "author": "Matheus Rocha Da Silva",
     "browser_action": {
         "default_title": "Serebii Dex",
-        "default_popup": "index.html"
+        "default_popup": "index.html",
+        "default_icon": "pokeball.png"
     }
     
     

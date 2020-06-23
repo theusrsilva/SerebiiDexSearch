@@ -3,13 +3,23 @@
   <head>
     <title>Serebii Dex Search</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
-      <img id="image" src="https://www.serebii.net/pokedex-swsh/icon/025.png" alt="">
-      <div class="autocomplete" >
-          <input id="myInput" type="text" name="Pokémon" placeholder="Pok&eacute;mon">
+    <div class="container">
+      <div class="row">
+        <img id="image" class="mx-auto" src="https://www.serebii.net/pokedex-swsh/icon/025.png" alt="">
       </div>
-      <a id="submit" target="_blank" href="https://www.serebii.net/pokedex-swsh/">Buscar</a>
+      <div class="autocomplete row" >
+            <input id="myInput" type="text" name="Pokémon" placeholder="Pok&eacute;mon">
+      </div>
+      <div class="row">
+        <a id="submit" class="button mx-auto" target="_blank" href="https://www.serebii.net/pokedex-swsh/">Buscar</a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="main.js"></script>
   </body>
 </html>

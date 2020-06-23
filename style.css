@@ -5,7 +5,9 @@
 body {
   font: 16px Arial;  
 }
-
+#image{
+  width: 60px;
+}
 /*the container must be positioned relative:*/
 .autocomplete {
   position: relative;
@@ -33,6 +35,8 @@ input[type=text] {
   display: inline-block;
   font-size: 16px;
   margin-top : 5px;
+  margin-bottom : 5px;
+  border-radius: 15px;
 }
 
 .autocomplete-items {
