@@ -1,10 +1,11 @@
 {
     "manifest_version": 2,
     "name": "Serebii Dex Search" ,
-    "version": "0.1",
+    "version": "1.0",
     "description": "Extensão para facilitar busca de pokémons na Serebii",
     "author": "Matheus Rocha Da Silva",
-    "permissions": [ "cookies", "http://*/*", "https://*/*" ],
+    "permissions": [ "cookies"],
+    "optional_permissions": [ "http://*/*", "https://*/*" ],
     "browser_action": {
         "default_title": "Serebii Dex",
         "default_popup": "index.html",

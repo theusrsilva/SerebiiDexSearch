@@ -1,4 +1,4 @@
-function autocomplete(inp, arr, sub, img) {
+function autocomplete(inp, arr, sub, img, selec, urls) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
@@ -39,6 +39,7 @@ function autocomplete(inp, arr, sub, img) {
                   dexNum = "0"+dexNum;
                 }
                 img.src = "https://www.serebii.net/pokedex-swsh/icon/"+dexNum+".png"
+
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
@@ -102,14 +103,43 @@ function autocomplete(inp, arr, sub, img) {
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
     });
-
+    selec.addEventListener("change", function (e){
+      var value = inp.value;
+      var selecValue = selec.options[selec.selectedIndex].value;
+      if(selecValue == '0'|| selecValue == '8'){
+        sub.href = urls[selecValue];
+      }else{
+        var indexDex = pokemons.indexOf(value)+1;
+        if(indexDex<100){
+          indexDex = indexDex.toString()
+          if(indexDex<10){
+            indexDex = "0"+indexDex;
+          }
+          indexDex = "0"+indexDex;
+        }
+        sub.href = urls[selecValue];
+      }
+    });
     sub.addEventListener("click", function (e){
       var value = inp.value;
-      sub.href = sub.href+ value.toLowerCase();
+      var selecValue = selec.options[selec.selectedIndex].value;
+      if(selecValue == '0'|| selecValue == '8'){
+        sub.href = sub.href+value.toLowerCase();
+      }else{
+        var indexDex = pokemons.indexOf(value)+1;
+        if(indexDex<100){
+          indexDex = indexDex.toString()
+          if(indexDex<10){
+            indexDex = "0"+indexDex;
+          }
+          indexDex = "0"+indexDex;
+        }
+        sub.href = sub.href+indexDex+'.shtml';
+      }
     });
   }
   
-  /*An array containing all the country names in the world:*/
+  /*An array containing all the pokemon names:*/
   var pokemons = [
     "Bulbasaur",
     "Ivysaur",
@@ -1006,6 +1036,23 @@ function autocomplete(inp, arr, sub, img) {
     "Zarude"
   ];
 
-  
+  var urls = [
+    "https://www.serebii.net/pokedex-swsh/",
+    "https://www.serebii.net/pokedex/",
+    "https://www.serebii.net/pokedex-gs/",
+    "https://www.serebii.net/pokedex-rs/",
+    "https://www.serebii.net/pokedex-dp/",
+    "https://www.serebii.net/pokedex-bw/",
+    "https://www.serebii.net/pokedex-xy/",
+    "https://www.serebii.net/pokedex-sm/",
+    "https://www.serebii.net/pokedex-swsh/"
+  ];
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-  autocomplete(document.getElementById("myInput"), pokemons,document.getElementById("submit"), document.getElementById("image") );
+  autocomplete(
+    document.getElementById("myInput"),
+    pokemons,
+    document.getElementById("submit"),
+    document.getElementById("image"),
+    document.getElementById("generations"),
+    urls
+    );
