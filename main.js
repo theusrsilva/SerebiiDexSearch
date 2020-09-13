@@ -122,6 +122,7 @@ function autocomplete(inp, arr, sub, img, selec, urls) {
     });
     sub.addEventListener("click", function (e){
       var value = inp.value;
+      
       var selecValue = selec.options[selec.selectedIndex].value;
       if(selecValue == '0'|| selecValue == '8'){
         sub.href = sub.href+value.toLowerCase();
