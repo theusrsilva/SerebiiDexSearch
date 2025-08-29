@@ -1,12 +1,12 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Serebii Dex Search" ,
     "version": "1.1",
     "description": "Extensão para facilitar busca de pokémons na Serebii",
     "author": "Matheus Rocha Da Silva",
     "permissions": [ "cookies"],
-    "optional_permissions": [ "http://*/*", "https://*/*" ],
-    "browser_action": {
+    "optional_host_permissions": [ "http://*/*", "https://*/*" ],
+    "action": {
         "default_title": "Serebii Dex",
         "default_popup": "index.html",
         "default_icon": "pokeball128.png"
@@ -16,8 +16,4 @@
             "48": "pokeball48.png",
             "128": "pokeball128.png"
           }
-
-    
-    
-    
 }
